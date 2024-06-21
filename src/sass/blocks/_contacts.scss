@@ -1,0 +1,59 @@
+.contacts {
+    padding: 120px 0 90px 0;
+    &__wrapper {
+        padding: 0 35px 0 52px;
+        display: grid;
+        grid-template-columns: 400px 585px;
+        justify-content: space-between; /* раздвигаем колонки в разные стороны */   
+    }
+    &__photo {
+        img {
+            width: 100%;
+        }
+    }
+    &__descr {
+        padding-top: 6px;
+    }
+    &__title {
+        position: relative;
+        @include before_circle;
+        left: 15px;
+    }
+    &__divider {
+        @include divider;
+        margin-top: 0;
+    }
+    &__text {
+        margin-top: 20px;
+    }
+
+    &__social {
+        margin-top: 20px;
+        display: flex;
+        
+        align-items: center;
+        min-width: 135px;
+        height: 30px;
+        bottom: 50px;
+        left: 128px;
+        align-items:top;
+    }    
+    &__icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 25px;
+        path{
+            width: 19px;
+            height: 19px;
+        }
+        &:hover {
+            fill: $main-color; 
+            transition: all .6s; 
+            stroke: $main-color;
+
+        }
+    }
+    &__form {
+        margin-top: 20px;
+    }
+}

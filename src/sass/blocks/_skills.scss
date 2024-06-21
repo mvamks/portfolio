@@ -1,0 +1,103 @@
+.skills {
+    padding-top: 120px;
+    &__title {
+        text-align: center;
+        position: relative;
+        @include before_circle;
+        &:before {
+            align-items: center;
+            left: 50%;
+            transform: translateX(-50%) ;
+        }
+    }
+    &__subtitle {
+        text-align: center;
+    }
+    &__divider {
+        @include divider;
+        margin: 0 auto;
+        margin-top: 25px;
+    }
+    &__wrapper {
+        margin-top: 60px;
+        padding-left: 10px;
+        display: grid;
+        grid-template-columns: repeat(4, 270px);
+        grid-template-rows: repeat(2, 270px);
+        grid-auto-rows: 270px;
+        column-gap: 10px;
+        row-gap: 10px;
+        &-item {
+            position: relative;
+            border: 1px solid #000;
+            img {
+                margin: 30px 0 0 30px;
+            }
+            h4 {
+            position: absolute;
+            top: 115px;
+            left: 30px;
+            }
+            p {
+                position: absolute;
+                top: 151px;
+                left: 30px;
+                font-size: 12px;
+                right: 25px;
+            }
+        }   
+    }
+    &__progress {
+        margin-top: 120px;
+        display: grid;
+        grid-template-columns: repeat(3, 350px);
+        grid-template-rows: repeat(2, 70px);
+        grid-auto-rows: auto;
+        column-gap: 45px;
+        row-gap: 30px;
+        &-item {
+            display: grid;
+            grid-template-columns: (300px 50px);
+            grid-template-rows: minmax(21px, auto) 14px;
+            justify-content: space-between;
+            align-content: space-between;
+            position: relative;
+            margin: 5px 0 0 14px;
+            @include before_circle;
+            &:before {
+                position: absolute;
+                top: -5px;
+            }
+            h4 {
+                margin-top: 7px;
+            }
+        }
+        &-counter {
+            font-size: 14px;
+            font-weight: 500;
+            text-align: right;
+            margin-top: 7px;
+        }
+        &-line{
+            width: 350px;
+            height: 14px;
+            background: #c3c2c2;
+            border-radius: 5px;
+        }
+        span {
+            display: block;
+            height: 100%;
+            background: $main-color;
+            border-radius: 5px;
+        }
+
+
+        
+        
+    }
+
+
+
+
+
+}

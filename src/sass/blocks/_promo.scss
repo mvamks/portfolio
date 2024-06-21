@@ -1,0 +1,47 @@
+.promo {
+    min-height: 100vh;
+    position: relative;
+    background: url('../../img/my_main.jpg') no-repeat 50%/cover;
+    padding-top: 205px;
+    &__title {
+        width: 480px;
+        margin-top: 10px;
+        color: rgb(65, 64, 64);
+        font: bold 3rem; /* Параметры шрифта */
+        -webkit-text-stroke: 1px turquoise; /* Параметры контура */
+        /* color: transparent;  *//* Прозрачный цвет */
+        animation: neon 2s linear infinite alternate-reverse; /* Параметры анимации */
+        @keyframes neon {
+            from { -webkit-text-stroke: 1px turquoise; }
+            to { -webkit-text-stroke: 1px coral; }
+        }
+    }
+    &__subtitle {
+        position: relative;
+        color: rgb(222, 217, 217);
+        z-index: 2;
+        @include before_circle;
+       
+    }
+    &__btns {
+        margin-top: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 300px;    
+    }
+    &__link {
+        color: rgb(250, 245, 245);
+        font-weight: bold;
+        transition: 0.5s all;
+        &:hover {
+            color: rgb(24, 24, 24);
+            text-decoration: none;
+            border: none;
+            box-shadow: 3px 3px 20px grey;   
+            background: $main-color;
+        }
+    }
+
+    
+}

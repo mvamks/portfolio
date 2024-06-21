@@ -1,0 +1,132 @@
+.gamburger {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    cursor: pointer;
+    span {
+        display: block;
+        width: 30px;
+        height: 3px;
+        background: white;
+        opacity: 0.7;
+    }
+    .gamburger_long {
+        width: 37px;
+    }  
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    left: -100%; /* смещение меню влево, чтобы не было видно */
+    width: 100%;
+    height: 100vh; /* растяжение высоты на весть экран, независимо от стройства */
+    z-index: 10;
+    visibility: hidden;  /* скрытый изначально блок */
+    opacity: 0;
+    transition: 0.6s all;
+    &.active { 
+        opacity: 1;
+        visibility: visible;
+        left: 0;
+    }
+    &__block {
+        position: relative;
+        /* left: -100%; */
+        width: 345px;
+        height: 100%;
+        background: $main-color;
+        transition: all .6s;
+        padding-top: 140px;   
+        z-index: 10; 
+    }
+    &__close {
+        position: absolute;
+       /*  left: -100%; */
+        width: 29px;
+        height: 29px;
+        top: 25px;
+        right: 25px;
+        cursor: pointer;
+    }
+    &__list {
+        
+        list-style-type: none;
+        padding-left: 35px;
+    }
+
+    &__link {
+        position: relative;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 15px;
+        margin-left: 40px;
+        &::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 15px;
+            height: 15px;
+            border-radius: 100%;
+            border: 1px solid #000;
+            left: -35px;
+            top: 10px;
+            transition: 0.6s all;
+        }
+
+        &:hover {
+            &::before {
+                background: white; //белый бэкграунд при наведении мышки 
+            }
+        }
+        a {
+        color: #fff;
+        text-transform: uppercase;
+       
+        }
+    }
+    &__social {
+        position: absolute;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 90px;
+        height: 19px;
+        bottom: 50px;
+        left: 128px;
+        align-items:top;
+    }
+    
+        
+    &__icon {
+        width: 19px;
+        height: 19px;
+        path{
+            width: 19px;
+            height: 19px;
+        }
+        
+        &:hover {
+            fill: rgb(66, 64, 64); 
+            transition: all .6s; 
+            stroke: rgb(66, 64, 64);
+
+        }
+    }
+
+    &__overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white;
+        opacity: 0.45;
+    }
+}
