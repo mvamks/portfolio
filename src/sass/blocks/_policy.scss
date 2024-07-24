@@ -1,0 +1,78 @@
+.policy {
+    
+    .container {
+        width: 900px;
+        margin: 0 auto;
+        .wrapper {
+            background-color: rgb(170, 168, 168);
+            margin: 70px 0 70px 0;
+            padding: 20px 20px 100px 20px;
+            box-shadow: 3px 3px 20px black;
+            border-radius: 20px;
+        }  
+    }
+    &__menu {
+       margin-top: 10px; 
+       color: #177f20;
+       margin-bottom: 50px; 
+    }
+    &__link {
+        color: #177f20;
+        font-weight: 600;
+        &:hover {
+            color: #ffffff;
+        }
+    }
+    .divider {
+        display: block;
+        margin: 20px auto;
+        width: 700px;
+        height: 4px;
+        background-color: $main-color; 
+    }
+    h1 {
+        text-align: center;
+        color: #f8f5f5;
+        text-transform: uppercase;
+    }
+    &__title {
+        margin-top: 40px;
+        color: #177f20; 
+        text-transform: uppercase; 
+    }
+    &__li {
+        margin-top: 10px;
+        color: #353434; 
+        margin-left: 40px; 
+    }
+    &__table {
+        width: 750px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 200px 550px;
+        /* grid-template-rows: 50px 100px 50px 100px;  */ 
+        grid-template-rows: repeat(2, minmax(70px, auto));
+    }
+    &__item {
+        border: 1px solid rgb(255, 255, 255); 
+        width: 100%;
+        height: 100%; 
+        &_col1, &_col2 {
+            width: 100%;
+            height: 100%;    
+            margin-top: 10px;
+            margin-left: 20px;
+            font-size: 14px;
+            line-height: 26px;
+        } 
+        &_col1 {
+            font-weight: 600;
+        }  
+    }
+    
+}
+
+
+
+
+

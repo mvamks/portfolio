@@ -4,6 +4,10 @@
     &__subtitle {
         text-align: center;
     }
+    .divider {
+        @include divider;
+        margin: 20px auto;
+    }
     &__box {
         position: relative;
         margin-top: 50px;
@@ -113,6 +117,8 @@
         font-size: 5vmin;
         text-transform: uppercase;
         font-weight: 700;
+        line-height: 25px;
+        
     }
     p {
         display: block;

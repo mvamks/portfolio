@@ -20,9 +20,9 @@
         margin-top: 60px;
         padding: 0 50px 0 50px;
         display: grid;
-        grid-template: repeat(3, 44px) / repeat(2, 370px);
-        grid-auto-rows: 45px;
-        row-gap: 18px;
+        grid-template: repeat(3, minmax(45px,auto)) / repeat(2, 370px);
+        grid-auto-rows: minmax(45px, auto);
+        row-gap: 30px;
         justify-content: space-between;
 
         &-item {
@@ -57,6 +57,7 @@
             font-size: 12px;
             margin-bottom: 0;
             align-self: end;
+            line-height: 18px;
         }   
     }   
 }
