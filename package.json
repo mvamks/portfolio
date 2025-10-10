@@ -1,6 +1,6 @@
 {
-  "name": "my-portfolio",
-  "homepage": "https://mvamks.github.io/portfolio",
+  "name": "portfolio",
+  "homepage": "https://mvamks.github.io/portfolio/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {

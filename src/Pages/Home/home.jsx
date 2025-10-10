@@ -1,5 +1,6 @@
 import Typewriter from 'typewriter-effect';
 import headerBg from "../../assets/img/header2.png";
+import { Link } from "react-router-dom";
 
 import "./home.scss";
 
@@ -31,8 +32,8 @@ const Home = () => {
                     }}
                 />
                 <div className="btn-group">
-                    <a href="/project" className="btn">Мои проекты</a>
-                    <a href="/contacts" className="btn">Контакты</a>
+                    <Link to="/project" className="btn">Мои проекты</Link>
+                    <Link to="/contacts" className="btn">Контакты</Link>
                 </div> 
             </div>
         </section>

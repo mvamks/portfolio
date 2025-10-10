@@ -1,10 +1,13 @@
 import { Routes, Route } from "react-router-dom";
+import React, { Suspense } from "react";
+
 import Header from "./components/Header/header";
-import Aboutme from "./Pages/About/aboutme";
 import Home from "./Pages/Home/home";
-import Project from "./Pages/Project/project";
-import Contacts from "./Pages/Contacts/contacts";
 import Footer from "./components/Footer/footer";
+
+const Aboutme = React.lazy(() => import ("./Pages/About/aboutme"));
+const Project = React.lazy(() => import  ("./Pages/Project/project"));
+const Contacts = React.lazy(() => import  ("./Pages/Contacts/contacts"));
 
 
 const App = () => {
@@ -12,11 +15,32 @@ const App = () => {
     <div className="App">
       <Header/> 
       <main>
-        <Routes>
+          <Routes>
             <Route path='/' element={<Home/>}/>
-            <Route path='/aboutme' element={<Aboutme/>}/>
-            <Route path='/project' element={<Project/>}/>
-            <Route path='/contacts' element={<Contacts/>}/>
+            <Route 
+              path='/aboutme' 
+              element={
+                <Suspense fallback={<div>Загрузка...</div>}>
+                  <Aboutme/>
+                </Suspense>
+              }
+            />
+            <Route 
+              path='/project' 
+              element={
+                <Suspense fallback={<div>Загрузка...</div>}>
+                  <Project/>
+                </Suspense>
+              }
+            />
+            <Route 
+              path='/contacts' 
+              element={
+                <Suspense fallback={<div>Загрузка...</div>}>
+                  <Contacts/>
+                </Suspense>
+              }
+            />
           </Routes>
       </main>
       <Footer/>    

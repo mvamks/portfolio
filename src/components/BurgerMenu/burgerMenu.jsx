@@ -2,7 +2,6 @@ import { stack as Menu } from 'react-burger-menu';
 import { NavLink } from 'react-router-dom';
 import { useState, useEffect, useRef } from 'react';
 import './burgerMenu.scss';
-import { div } from 'framer-motion/client';
 
 const BurgerMenu = () => {
     const [isOpen, setIsOpen] = useState(false); 
