@@ -1,0 +1,26 @@
+@use "../base/variables" as vars;
+@use "../base/mixins" as mixins;
+
+.btn {
+    
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 6px;
+    background: transparent;  
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 500;
+    text-decoration: none;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); // белое свечение
+    transition: all 0.3s ease;
+    &:hover {
+        background: vars.$blue-color;// более тёмный синий
+        transform: translateY(-2px); // лёгкий подъём
+        box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 2px 6px rgba(0, 0, 0, 0.15); // тень + свечение
+        color: #fff;
+    }
+    &:active {
+        transform: translateY(0); // возвращаем кнопку при клике
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.6); // возвращаем базовое свечение
+    }
+}

@@ -1,0 +1,16 @@
+.contacts {
+  padding-top: 100px;
+  padding-bottom: 50px;
+  height: auto; 
+  &__wrapper {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 400px 1fr;
+    gap: 60px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+  } 
+}
+

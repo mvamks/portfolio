@@ -1,0 +1,61 @@
+@use "../../styles/style.scss" as style;
+
+.bm-burger-button {
+  position: fixed;
+  width: 25px; 
+  height: 20px;
+  right: 20px;
+  top: 20px;
+}
+
+.bm-burger-bars {
+  background: #fff;
+}
+
+.bm-menu-wrap {
+  position: fixed;
+}
+
+.bm-menu {
+  background: #373a47;
+  padding: 2.5em 1.5em 0;
+  font-size: 1.15em;
+  margin-right: 10px;
+}
+
+/* Крестик */
+.bm-cross-button {
+  height: 24px;
+  width: 24px;
+}
+
+.bm-cross {
+  background: #bdc3c7;
+}
+
+.bm-overlay { 
+  background: rgba(0,0,0,0.3);
+}
+.bm-item{  
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+#page-wrap {
+  transition: transform 0.5s ease; // плавный переход
+} 
+
+.menu-item {
+  font-size: 30px;
+  text-decoration: none;
+  color: #fff;
+  margin-bottom: 10px;
+  &:hover {
+    color:style.$main-color;
+    text-shadow: 0 0 10px #fff, 
+      0 0 20px #fff, 
+      0 0 30px #fff;
+  }
+}
+
+

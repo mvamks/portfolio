@@ -1,0 +1,98 @@
+@use "../../styles/style.scss" as style;
+
+.social__wrapper {
+    width: 200px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;    
+    .menu__icon {
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+        background: style.$blue-color;
+        display: flex;           
+        align-items: center;    
+        justify-content: center;  
+        transition: all 0.3s;
+        &:hover {
+            background: white;
+            box-shadow: 0 0 10px rgba(137, 136, 136, 0.8), 0 2px 6px rgba(0, 0, 0, 0.15); // тень + свечение
+            transform: translateY(-2px); // лёгкий подъём
+            border:  2px solid rgb(150, 148, 148);
+            .social-icon {
+                fill: black;
+            }
+        }
+        .social-icon {
+            width: 30px;
+            height: 30px;
+            fill: white;
+            transition: fill 0.3s; // плавная анимация цвета
+        }  
+    }
+}
+
+.social__wrapper-contact {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 50px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* В Footer (горизонтально, центр) */
+.social__wrapper-footer {
+  position: relative;
+    .menu__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        background: white;
+        &:hover {
+            box-shadow: 0 0 10px rgba(137, 136, 136, 0.8), 0 2px 6px rgba(0, 0, 0, 0.15); // тень + свечение
+            transform: translateY(-2px); // лёгкий подъём
+            border:  3px double rgb(150, 148, 148);
+            .social-icon {
+                fill: style.$blue-color;
+            }
+        }
+        .social-icon {
+            fill: rgb(6, 6, 6);
+            
+        }  
+    }
+}
+
+/* На страницах Project и AboutMe (вертикально) */
+.social__wrapper-vertical {
+  flex-direction: column;
+  gap: 20px;
+  position: fixed;
+  width: auto;
+  height: auto;
+  margin-top: 100px;
+  margin-left: 30px;
+  .menu__icon {
+        width: 40px;
+        height: 40px;
+        border-radius: 6px;
+        background: white;
+        &:hover {
+            box-shadow: 0 0 10px rgba(137, 136, 136, 0.8), 0 2px 6px rgba(0, 0, 0, 0.15); // тень + свечение
+            transform: translateY(-2px); // лёгкий подъём
+            border:  3px double rgb(150, 148, 148);
+            .social-icon {
+                fill: style.$blue-color;
+            }
+        }
+        .social-icon {
+            fill: rgb(6, 6, 6);
+            
+        }  
+    }
+}
+

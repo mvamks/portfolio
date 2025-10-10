@@ -1,0 +1,34 @@
+@use "../../styles/style.scss" as style;
+
+.contact__social {
+    max-width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    position: relative;  
+    margin: 0 auto;
+    padding: 0 5px;
+    font-family: sans-serif;
+
+    &-title {
+        text-align: left;
+        font-size: 1.5rem;
+        color: #333;
+    }
+    .divider {
+        @include style.divider;
+        width: 150px;
+        margin: 0;
+    }
+    &-description {
+        width: 100%;
+        font-size: 20px;
+        
+        margin-top: 30px;
+        font-weight: 500;
+        P {
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+    }
+}

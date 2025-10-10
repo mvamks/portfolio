@@ -1,0 +1,36 @@
+@use "../../styles/style.scss" as style;
+
+.project {
+    padding-bottom: 50px;
+    height: auto;
+    &__title {
+        position: relative;
+        width: 150px;
+        margin: 0 auto;
+        text-align: center;
+        z-index: 1;
+        @include style.before_circle; 
+    }
+    .container {
+        padding-top: 90px;
+    }
+    .divider {
+        @include style.divider;
+        margin: 0 auto;
+    }
+    &__box {
+        position: relative;
+        margin-top: 50px;
+        display: grid;
+        grid-template: 370px / repeat(2, 1fr);
+        grid-auto-rows: 370px;
+        column-gap: 40px;
+        row-gap: 40px;
+        @media (max-width: 768px) { // когда ширина экрана меньше 768px
+            grid-template: 350px / 1fr;  // одна колонка
+        }
+    } 
+}
+
+
+
