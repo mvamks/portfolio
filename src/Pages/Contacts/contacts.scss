@@ -14,3 +14,28 @@
   } 
 }
 
+@media (max-width: 767px) {
+  .contacts {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    .contact__social {
+      width: calc(100% - 30px);
+      margin: 0 auto;
+      border: 1px solid gray;
+      border-radius: 6px;
+      .social__wrapper-contact {
+        position: relative;
+        margin-left: auto;
+      }
+    }
+    &__form {
+      max-width: 450px;
+      padding: 0 15px;
+      form button {
+        position: relative;
+        margin-top: 10px;
+      }
+    }
+  }
+}
+

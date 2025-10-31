@@ -3,7 +3,7 @@ import { skills, categories } from "../../data/skillsData";
 import { motion } from "framer-motion";
 import "./skillsSection.scss";
 
-const SkillsSection = () => {
+const SkillsSection = ({isMobile}) => {
   const categoryRefs = useRef([]);
 
   useEffect(() => {
@@ -23,6 +23,7 @@ const SkillsSection = () => {
       },
       { threshold: 0.2}
     );
+       // подписываемся только на существующие элементы
     categoryRefs.current.forEach((el) => {
       if (el) observer.observe(el);
     });
@@ -35,38 +36,72 @@ const SkillsSection = () => {
       <section className="skills-section">
         {categories.map((category, idx) => (
           <div 
-            key={idx} 
-            className="skills-category"
+            className={`skills-category ${isMobile ? 'mobile' : ''}`}
+            key={idx}
             ref={(el) => (categoryRefs.current[idx] = el)}
           >
-            <h3>{category}</h3>
-            <ul>
-              {skills
-                .filter(skill => skill.category === category)
-                .map((skill, i) => (
-                  <li key={i}>{skill.title} – {skill.text}</li>
-                ))}
-            </ul>
-          </div>
-        ))}
+            
+
+            {isMobile && (
+              <>
+              <h3 className="skills-category__title">{category}</h3>
+              <section className="skills-icons">
+                {skills
+                  .filter(skill => skill.category === category)
+                  .map((skill, i) => (
+                    <div key={i} className="skill-card"> 
+                      <img src={skill.icon} alt={skill.alt} />
+                      <p>{skill.title}</p>
+                      <span className="category">{skill.category}</span>
+                    </div>
+                  ))}
+              </section>
+              <ul className="skills-list">
+                {skills
+                  .filter((skill) => skill.category === category)
+                  .map((skill, i) => (
+                    <li key={i} className="skills-list__item">
+                      <strong>{skill.title}</strong> — {skill.text}
+                    </li>
+                  ))}
+              </ul>
+              </>
+              
+            )}
+
+            {!isMobile && (
+              <ul className="skills-list">
+                {skills
+                  .filter((skill) => skill.category === category)
+                  .map((skill, i) => (
+                    <li key={i} className="skills-list__item">
+                      <strong>{skill.title}</strong> — {skill.text}
+                    </li>
+                  ))}
+              </ul>
+            )}
+        </div>
+      ))}
       
-        <section className="skills-icons">
+       {!isMobile && (
+        <section className="skills-icons skills-icons--all">
           {skills.map((skill, idx) => (
-            <motion.div 
+            <motion.div
               key={idx}
               className="skill-card"
               whileHover={{
-                scale: 1.1,
-                opacity: 0.8,
-                transition: { duration: 0.3 },
+                scale: 1.05,
+                opacity: 0.9,
+                transition: { duration: 0.2 },
               }}
-            > 
+            >
               <img src={skill.icon} alt={skill.alt} />
-              <p>{skill.title}</p>
-              <span className="category">{skill.category}</span>
+              <p className="skill-card__title">{skill.title}</p>
+              <span className="skill-card__cat">{skill.category}</span>
             </motion.div>
           ))}
         </section>
+      )}
       </section>
     </>
   );

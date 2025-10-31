@@ -1,6 +1,5 @@
 @use "../../styles/style.scss" as style;
 
-
 .footer {
   background-color: rgba(0, 0, 0); 
   color: #fff;
@@ -26,10 +25,10 @@
 
   &__nav {
     .nav-list {
-      width: 150px;
+      width: 100%;
       display: flex;
       flex-direction: column;
-      row-gap: 15px;
+      row-gap: 10px;
       li a {
         &:hover {
             color:style.$blue-color;
@@ -39,7 +38,7 @@
     }
   }
 
-  &__contacts, &__sicials {
+  &__contacts, &__socials {
     width: 200px;
     display: flex;
     flex-direction: column;
@@ -62,5 +61,57 @@
     height: 70px;
     background: #333;
     margin: 0 15px;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer {
+    &__container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      max-width: 100%;
+      padding: 0 12px;
+    }
+    &__nav {
+      .nav-list{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+      }
+    }
+    &__vertical {
+      display: none;
+    }
+
+    &__socials,
+    &__contacts {
+      align-items: center;
+      text-align: center;
+      h3 { display: none; }
+      a { word-break: break-word; } 
+    }
+
+    &__bottom {
+      font-size: 13px;
+      padding-top: 12px;
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px)  {
+  .footer {
+    padding: 20px 20px 20px 100px;
+  } 
+  
+}
+
+@media (prefers-reduced-motion: reduce) {
+   * {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
   }
 }

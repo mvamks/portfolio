@@ -1,6 +1,5 @@
 @use "../../styles/style.scss" as style;
 
-
 .aboutme {
     width: 100%;
     background: gray;
@@ -11,12 +10,13 @@
         max-width: max-content;
         display: grid;
         grid-template-columns: 350px 1fr;
-        grid-template-rows: minmax(200px, auto)
-                            minmax(30px, auto)
-                            minmax(255px, auto);
+        grid-template-rows: minmax(35px, auto)
+                            minmax(200px, auto)
+                            minmax(30px, auto);
         grid-auto-rows: minmax(245px, auto);
         column-gap: 50px;  
         grid-template-areas:
+            "left wrapper-title"
             "left right1"
             ".    right2"
             "bottom bottom";
@@ -26,6 +26,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        grid-area: wrapper-title;
         .btn {
             color:black;
         }   
@@ -47,7 +48,6 @@
                 object-fit: cover;
                 transition: transform 0.6s cubic-bezier(.2,.9,.2,1);
             }
-           
             &::before {
                 content: "";
                 position: absolute;
@@ -61,7 +61,6 @@
                 transition: transform 0.4s ease;
                 pointer-events: none;
             }
-
             &::after {
                 content: "";
                 position: absolute;
@@ -75,7 +74,6 @@
                 transition: transform 0.4s ease;
                 pointer-events: none; 
             }
-
             &:hover::before {
                 transform: translate(-15px, -15px);
                 width: 80%;
@@ -83,7 +81,6 @@
                 border-top: 2px solid rgba(style.$blue-color, 0.3);
                 border-left: 2px solid rgba(style.$blue-color, 0.3);  
             }
-
             &:hover::after {
                 transform: translate(15px, 15px);
                 width: 80%;
@@ -91,14 +88,12 @@
                 border-bottom: 2px solid rgba(style.$blue-color, 0.3);
                 border-right: 2px solid rgba(style.$blue-color, 0.3);
             }
-
             &:hover img {
                 transform: scale(1.03);
             }
         }
     }
 
-    
     &__title {
         position: relative;
         z-index: 1;
@@ -146,7 +141,6 @@
             margin-top: 6px;
         }
     }
-    
     &__left {
         grid-area: left;
     }
@@ -162,10 +156,71 @@
     }
 }
 
+@media (max-width: 767px) {
+    .container {
+        padding: 10px;
+        .aboutme {
+            &__skills{
+                /* display: grid; */
+                width: 100%;
+            }
+            &__wrapper{
+                padding-top: 60px;
+                grid-template-columns:  1fr 150px;
+                grid-template-rows: minmax(35px, auto)
+                                    minmax(200px, auto)
+                                    minmax(30px, auto);
+                grid-auto-rows: minmax(245px, auto);
+                column-gap: 20px;  
+                grid-template-areas:
+                    "wrapper-title left "
+                    "right1    right1"
+                    "right2    right2"
+                    "bottom bottom";
+            }
 
-@media (max-width: 480px) {
-    .aboutme__skill {
-        grid-template-columns: 40px 1fr; 
-        grid-template-rows: auto; 
+            &__photo {
+                width: 150px;
+                height: 150px;
+            }
+            &__wrapper-title{
+                grid-area: wrapper-title;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                row-gap: 30px;
+            }
+            &__right2 {       
+                margin: 0 auto; 
+                .divider {
+                    margin-left: 30px; 
+                }
+            }
+            &__right1 {
+                width: 100%;
+                padding: 10px;
+            }
+        }    
     }
+    .social__wrapper-vertical {
+        display: none;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1023px)  {
+    .container {
+        padding: 10px;
+        .aboutme {
+            &__wrapper{
+                grid-template-areas:
+                    "left wrapper-title"
+                    "left right1"
+                    "right2    right2"
+                    "bottom bottom";
+            }
+            &__right2 {
+                margin: auto;
+            }
+        }
+    }   
 }

@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { useState, useEffect } from "react";
 import React, { Suspense } from "react";
 
 import Header from "./components/Header/header";
@@ -11,17 +12,25 @@ const Contacts = React.lazy(() => import  ("./Pages/Contacts/contacts"));
 
 
 const App = () => {
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 480);
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 480);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  },[]);
+
   return (
     <div className="App">
       <Header/> 
-      <main>
+      <main className="main">
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route 
               path='/aboutme' 
               element={
                 <Suspense fallback={<div>Загрузка...</div>}>
-                  <Aboutme/>
+                  <Aboutme isMobile={isMobile}/>
                 </Suspense>
               }
             />
@@ -37,7 +46,7 @@ const App = () => {
               path='/contacts' 
               element={
                 <Suspense fallback={<div>Загрузка...</div>}>
-                  <Contacts/>
+                  <Contacts isMobile={isMobile}/>
                 </Suspense>
               }
             />

@@ -25,12 +25,64 @@
         grid-template: 370px / repeat(2, 1fr);
         grid-auto-rows: 370px;
         column-gap: 40px;
-        row-gap: 40px;
-        @media (max-width: 768px) { // когда ширина экрана меньше 768px
-            grid-template: 350px / 1fr;  // одна колонка
-        }
+        row-gap: 40px; 
     } 
 }
 
+@media (max-width: 520px) { 
+    .project {
+        padding-bottom: 20px;
+        .container {
+            padding-top: 70px;
+            .project__box {
+                grid-template: 350px / 1fr;  
+                margin-top: 10px;
+                row-gap: 10px;
+            }
+            .project__item {
+                height: 350px;
+                .img-box {
+                padding: 10px;
+                }
+                .open-btn {
+                    height: 50px;
+                }
+            }
+        } 
+    }
+}
 
-
+@media (min-width: 521px) and (max-width: 600px) { 
+    .project__box { 
+        grid-template: 300px / repeat(2, 1fr);
+        grid-auto-rows: 300px;
+        padding: 0 10px; 
+        column-gap: 10px;
+        margin-top: 20px;  
+    } 
+    .project__item {
+        height: 300px;
+        .img-box {
+            height: 230px;
+            padding: 10px;
+        }
+    }
+    .project__item-hidden.open {
+        max-height: 220px;
+    }
+    .project__item-name {
+        margin-top: 0;
+        font-size: 20px;   
+    }
+    .project__item a {
+        font-size: 20px;
+        margin: 15px auto 15px auto;
+    }
+    .project__item p {
+        display: flex;
+        width: 100%;
+        margin-top: 20px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
