@@ -1,10 +1,13 @@
 @use "../../styles/style.scss" as style;
 
 .footer {
+  grid-area: footer;
   background-color: rgba(0, 0, 0); 
   color: #fff;
   padding: 20px 20px;
   font-family: 'Alegreya', serif;
+  z-index: 10;
+  flex-shrink: 0;
   a {
     color: style.$blue-color;
     text-decoration: none;

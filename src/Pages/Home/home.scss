@@ -1,35 +1,42 @@
 @use "../../styles/style.scss" as style;
 
 .home {
-    width: 100%;
-    min-height: max-content;
-    //overflow: hidden;
-    padding-top: 80px;
     position: relative;
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
+    display: grid;
+    grid-template-areas: "content";
+    width: 100%;
+    height: 100%;
+    min-height: 0;
+    background: black;
+    z-index: 0;
+    &__bg {
+        grid-area: content;
         width: 100%;
-        height: 100vh;
-        object-fit: cover; 
+        height: 100%;
+        max-height: 100vh;
+        object-fit: cover;
+        opacity: 0;
         z-index: -1;
-        transition: filter 0.3s ease;
-        filter: brightness(0.5); 
+        transition: opacity 1s ease; 
+        filter: brightness(0.5);
+    }
+    &__bg.visible {
+        opacity: 1;
     }
     &__content {
+        grid-area: content;
         position: relative;
         z-index: 2;
-        max-width: 700px;
-        text-align: center;
-        padding: 60px; 
-        margin: 0;
+        padding: 120px 100px; 
         @media (max-width: 768px) {
             max-width: 90%;
             padding: 15px; 
+            padding-top: 80px; 
+            
         }
         @media (max-width: 480px) {
             padding: 10px;
+            padding-top: 80px; 
         }
     }
 
@@ -40,9 +47,11 @@
         margin: 0;
         @media (max-width: 768px) {
             font-size: 32px;
+            text-align: center;
         }
         @media (max-width: 480px) {
             font-size: 24px;
+            text-align: center;
         }
     }
     h2 {
@@ -57,9 +66,11 @@
 
         @media (max-width: 768px) {
             font-size: 18px;
+            text-align: center;
         }
         @media (max-width: 480px) {
             font-size: 16px;
+            text-align: center;
         }   
     }
 }
@@ -96,12 +107,18 @@
 .btn-group {
     display: flex;
     width: 100%;
-    justify-content: center;
+    justify-content: left;
     align-items:center;
     margin-top: 50px;
     padding: 0;
-    gap: 50px;
+    gap: 80px;
     flex-wrap: wrap;
+     @media (max-width: 768px) {
+            justify-content: center;
+        }
+        @media (max-width: 480px) {
+            justify-content: center;
+        }
     .btn {
         display: inline-flex;
         justify-content: center;

@@ -1,6 +1,7 @@
 @use "../../styles/style.scss" as style;
 
 .header {
+    grid-area: header;
     position: fixed; 
     top: 0;
     left: 0;
