@@ -2,9 +2,11 @@ import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
 import React, { Suspense } from "react";
 
+
 import Header from "./components/Header/header";
 import Home from "./Pages/Home/home";
 import Footer from "./components/Footer/footer";
+import Spinner from "./components/Spinner/spinner";
 
 const Aboutme = React.lazy(() => import ("./Pages/About/aboutme"));
 const Project = React.lazy(() => import  ("./Pages/Project/project"));
@@ -29,7 +31,7 @@ const App = () => {
             <Route 
               path='/aboutme' 
               element={
-                <Suspense fallback={<div>Загрузка...</div>}>
+                <Suspense fallback={<Spinner/>}>
                   <Aboutme isMobile={isMobile}/>
                 </Suspense>
               }
@@ -37,7 +39,7 @@ const App = () => {
             <Route 
               path='/project' 
               element={
-                <Suspense fallback={<div>Загрузка...</div>}>
+                <Suspense fallback={<Spinner/>}>
                   <Project/>
                 </Suspense>
               }
@@ -45,7 +47,7 @@ const App = () => {
             <Route 
               path='/contacts' 
               element={
-                <Suspense fallback={<div>Загрузка...</div>}>
+                <Suspense fallback={<Spinner/>}>
                   <Contacts isMobile={isMobile}/>
                 </Suspense>
               }
