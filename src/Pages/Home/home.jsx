@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import Typewriter from 'typewriter-effect';
-import headerBg from "../../assets/img/header2.png";
+import headerBg from "../../assets/img/header.webp";
 import { Link } from "react-router-dom";
 
 import "./home.scss";
