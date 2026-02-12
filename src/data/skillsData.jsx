@@ -46,7 +46,7 @@ export const aboutInfo = {
 
     "Готова к новым вызовам и развитию в команде." 
   ],
-  resume: "/files/resume.pdf"
+  resume: `${import.meta.env.BASE_URL}files/resume.pdf`
 };
 
 
