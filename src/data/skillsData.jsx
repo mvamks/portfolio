@@ -5,6 +5,7 @@ import reactIcon from "../assets/icons/about_me/react.svg";
 import reduxIcon from "../assets/icons/about_me/redux.svg";
 import figmaIcon from "../assets/icons/about_me/figma.svg";
 import performanceIcon from "../assets/icons/about_me/perfor.png";
+import apiIcon from "../assets/icons/about_me/api.svg";
 import WPIcon from "../assets/icons/about_me/wordpress.svg";
 import gitIcon from "../assets/icons/about_me/git.svg";
 import gitHubIcon from "../assets/icons/about_me/github.svg";
@@ -103,14 +104,13 @@ export const skills = [
     text: "Lazy loading, code splitting, оптимизация изображений и производительности приложения."
   },
 
-  // WordPress Development
   {
-    category: "WordPress Development",
-    icon: WPIcon,
-    alt: "wordpress",
-    title: "WordPress",
-    text: "Работа с темами и плагинами, настройка и кастомизация сайтов, базовая SEO-оптимизация."
-  },
+    category: "API Integration",
+    icon: apiIcon, 
+    alt: "api",
+    title: "API",
+    text: "Получение и отправка данных на сервер, работа с fetch и Axios."
+  }, 
 
   // Tools & DevOps
   {
@@ -143,17 +143,17 @@ export const skills = [
   },
   {
     category: "Tools & DevOps",
-    icon: sassIcon,
-    alt: "sass",
-    title: "Sass",
-    text: "Препроцессор CSS: переменные, миксины, вложенность, импорты."
-  },
-  {
-    category: "Tools & DevOps",
     icon: npmIcon,
     alt: "npm",
     title: "NPM",
     text: "Управление пакетами, скрипты, установка зависимостей."
+  },
+  {
+    category: "Tools & DevOps",
+    icon: sassIcon,
+    alt: "sass",
+    title: "Sass",
+    text: "Препроцессор CSS: переменные, миксины, вложенность, импорты."
   },
 
   // Soft Skills
